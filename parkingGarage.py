@@ -1,5 +1,3 @@
-# Start Your Code here
-
 class Garage:
     def __init__(self):
         self.tickets = [1:10]
@@ -13,7 +11,20 @@ class Garage:
         print(f"You took ticket no.{ticket}! ")
 
     def payForParking(self):
-        pass
-
+        while True:
+            pay_ticket = int(input(f"Which ticket will you pay for? Enter '0' to quit: \n{self.currentTicket}"))
+            if pay_ticket == 0:
+                break
+            elif pay_ticket in self.currentTicket.keys():
+                pay_confirm = input("Enter any key to pay, or enter 'c' to cancel: ")
+                if pay_confirm.lower() == "c":
+                    continue
+                else:
+                    self.currentTicket[pay_ticket]: 'Paid'
+                    print(f"Ticket no.{pay_ticket} has been paid! ")
+                    break
+            else:
+                print("Invalid entry.")
     def leavesGarage(self):
-        pass
+        while True:
+            leave_ticket = int(input(f"Which ticket will you pay for? Enter '0' to quit: \n{self.currentTicket}"))
