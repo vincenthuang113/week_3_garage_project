@@ -1,6 +1,7 @@
 class Garage:
     def __init__(self):
         self.tickets = [1:10]
+        self.parkingSpaces = [1:10]
         self.currentTicket = {}
     
     def takeTicket(self):
@@ -10,8 +11,8 @@ class Garage:
         print(f"You took ticket no.{ticket}! ")
 
     def payForParking(self):
-        while True:    
-            pay_ticket = int(input(f"Which ticket will you pay for? Enter '0' to quit: \n{self.currentTicket} "))
+        while True:
+            pay_ticket = int(input(f"Which ticket will you pay for? Enter '0' to quit: \n{self.currentTicket}"))
             if pay_ticket == 0:
                 break
             elif pay_ticket in self.currentTicket.keys():
@@ -20,6 +21,7 @@ class Garage:
                     continue
                 else:
                     self.currentTicket[pay_ticket] = 'Paid'
+                    self.currentTicket[pay_ticket]: 'Paid'
                     print(f"Ticket no.{pay_ticket} has been paid! ")
                     break
             else:
